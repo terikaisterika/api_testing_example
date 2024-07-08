@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "start_wss": "node pure_wss.js"
   },
   "author": "",
   "license": "ISC",
@@ -11,6 +12,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "request": "^2.88.2",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "ws": "^8.18.0"
   }
 }
