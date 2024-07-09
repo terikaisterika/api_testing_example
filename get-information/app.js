@@ -164,5 +164,5 @@ work_space.on('connection', (socket) => {
 });
 app.use(express.static(__dirname));
 http.listen(port, host, () =>
-  console.log(`Server listens http://${host}:${port}`)
+  console.log(`Server listens ws://${host}:${port}`)
 );
