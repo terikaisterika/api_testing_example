@@ -10,6 +10,7 @@
 <h2>Как установить?</h2>
 <p>У Вас на компе должны быть visual studio, git (возможны другие варианты, но это уже от Вас зависит). Создайте папку, в которую собираетесь поместить проект. На странице https://github.com/terikaisterika/api_testing_example получите url (Кнопка Code=>скопировать появившийся url). Находясь в подготовленной папке у себя в консоли через команду git clone https://github.com/terikaisterika/api_testing_example.git скопируйте проект.</p>
 <h3>REST API</h3>
+https://drive.google.com/file/d/1aKflXDXPe5TGLwdmDubWL3-6bFu3Cb25/view?usp=sharing
 <p>Проект можно запустить перейдя в папку task-api. Пример для windows: Выполните последовательно  cd .\api_testing_example\ => cd .\task-api\ => выполнить команду npm install (единожды в этом проекте) => npm start. Консоль отобразит url, на котором будет жить rest api + port </p>
 <img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/6d0619f0-5ce0-4bd3-8ed8-dd4e3d0c211d")/>
 <p>Rest api содержит 2 endpoints</p>
@@ -52,6 +53,7 @@
 <h3>Socket io</h3>
 <h4>ws://127.0.0.1:7000/</h4>
 <p>Проект можно запустить перейдя в папку cd .\get-information\ => выполнить команду npm install (единожды в этом проекте) => npm start. В консоль будет выведен url, на который можно тестировать, к примеру ws://127.0.0.1:7000/</p>
+https://drive.google.com/file/d/1wl2WD1lrmRIGl6zZ0isZD8UTjsY7sCVA/view?usp=sharing
 <p>Пример по ws://127.0.0.1:7000/ предполагает несколько ключевых слов:</p>
 <ul>
   <li><strong>help</strong> - можно получить помощь;</li> 
@@ -66,6 +68,7 @@
 <p>Адрес ws://127.0.0.1:7000/ предназначен просто для ознакомления с возможностями (получать ответ от сервера или другого API, попробовать "пользовательские события"  и отправку всем ( informEveryone ), broadcast</p>
 <p>Юзеров и задачи нужно создавать через rest api</p>
 <h4>ws://127.0.0.1:7000/work</h4>
+https://drive.google.com/file/d/1qDNI2ZDVfcQYpXVV5dX5QwzIMi5hwI2i/view?usp=sharing
 <p>Пример пространства. Пользователь подключается по определенному урлу, в данном случае ws://127.0.0.1:7000/work и может общаться с остальными.</p>
 <p>Представим новичка, он приходит на новую работу, подключается по определенному урлу к рабочему пространству. Вводит команду help и получает совет от сервера.</p>
 <img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/fd49bf3f-5332-4305-b6e2-791b422fc5d7"/>
@@ -79,6 +82,7 @@
 <p>Сообщения с типом <strong>question</strong> будет рассылаться всем в рабочем пространстве, кто прослушивает это событие.</p>
 <h3>WebSocket</h3>
 <h4>ws://127.0.0.1:7001</h4>
+https://drive.google.com/file/d/1NmbhbuUT98JjMiEY_pnhsCLH55ty29ct/view?usp=sharing
 <p>Проект можно запустить перейдя в папку cd .\get-information\ =>npm run start_ws</p>
 <p>У проекта есть уже знакомые команды</p>
 <ul>
