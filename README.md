@@ -1,6 +1,6 @@
 <h1>Тестовые примеры для работы c примерами rest api, websocket, socket io</h1>
 <h2>Для чего?</h2>
-<p>Чтобы было на чем тренироваться в рамках тестирования Postman, автотестов на api, возможно сделать первые шаги в программировании на клиентской части.</p>
+<p>Чтобы было на чем тренироваться в рамках тестирования Postman, автотестов на api, возможно сделать первые шаги в программировании на клиентской части. Делалось для себя, для запусков на винде.</p>
 <h2>С чем можно тренироваться?</h2>
 <p>На данном этапе с REST API, socket io, websocket.</p>
 <p>Зависимости: socket io и websocket получает количество задач и юзеров из REST API. (Просто, чтобы можно было показать взаимодействие)</p>
@@ -14,10 +14,30 @@
 <img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/6d0619f0-5ce0-4bd3-8ed8-dd4e3d0c211d")/>
 <p>Rest api содержит 2 endpoints</p>
 <ul>
-  <li>users. Поддерживает методы: POST (CREATE) , GET список, GET по id, PUT (UPDATE), DELETE</li>
-  <li>tasks. Поддерживает методы: POST (CREATE) , GET список, GET по id, PUT (UPDATE), DELETE</li>
+  <li>users. Поддерживает методы: POST (CREATE) , GET (READ список), GET по id, PUT (UPDATE), DELETE</li>
+  <li>tasks. Поддерживает методы: POST (CREATE) , GET (READ список), GET по id, PUT (UPDATE), DELETE</li>
 </ul>
-<p>Обращаться можно также на базовый путь, где можно получить полные урлы</p>
+<p>Формат body при создания user</p>
+<code>
+  {
+    "firstName": "Тестовый title 2",
+    "lastName": "Тестовый description 2"
+  }
+</code>
+<p>Формат body задачи ("completed" булевый тип) </p>
+<code>
+  {
+    "title": "Тестовый title 2",
+    "description": "Тестовый description 2",
+    "completed": false,
+    "userId": 1
+}
+</code>
+<h4>Коллекции для Postman будут в проекте.</h4>
+<p>В коллекциях ws есть наименования отправитель и получатель, либо новенький/остальная команда. Сделано для того, чтобы проще было усвоить, как это работает. Но в принципе любой запрос может выполнять любую роль.</p>
+<img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/7439ac53-5286-4688-9646-e0655c22cd9e"/>
+
+<p>Обращаться можно также на базовый путь, где можно получить полные урлы, а также установить куку.</p>
 <img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/458cc1b8-18e9-45f0-93f4-7f4eb92de069"/>
 <p>Проект на основе базовой авторизации. Есть 2 роли:</p>
 <ul>
@@ -54,6 +74,11 @@
 <h3>WebSocket</h3>
 <h4>ws://127.0.0.1:7001</h4>
 <p>Проект можно запустить перейдя в папку cd .\get-information\ =>npm run start_ws</p>
+<p>У проекта есть уже знакомые команды</p>
+<ul>
+  <li><strong>help</strong> - можно получить помощь;</li> 
+  <li><strong>users</strong> - выдаст количество юзеров из REST API (для этого должен быть запущен проект с REST API);</li>
+  <li><strong>tasks</strong> - выдаст количество задач из REST API (для этого должен быть запущен проект с REST API).</li>
+</ul>
+<p>Остальной пересылаемый текст будет распространяться всем подключившимся.</p>
 <img src="https://github.com/terikaisterika/api_testing_example/assets/48588741/b94348ab-01b9-4fe0-a317-4eff2a7a38cb"/>
-<h3>Пример работы на видео:</h3>
-https://drive.google.com/file/d/1eckCkDnhSba5HlsyioUI0kU7317Cs2kq/view?usp=sharing
