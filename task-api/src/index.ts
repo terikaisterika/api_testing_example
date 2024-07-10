@@ -35,7 +35,8 @@ app.use((req:Request, res: Response,next:NextFunction)=>{
   next();
 })
 app.get('/', (req:Request, res: Response, )=>{
-  res.send(`Полный путь для тестов задач ${baseUrl}:${port}/tasks`)
+  res.send(`Полный путь для работы с задачами ${baseUrl}:${port}/tasks, 
+    Полный путь для работы с юзерами ${baseUrl}:${port}/users`)
 })
 
 app.use((err: Error, req:Request, res:Response, next:NextFunction)=>{

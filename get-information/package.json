@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "start_wss": "node pure_wss.js"
+    "start_ws": "node pure_wss.js"
   },
   "author": "",
   "license": "ISC",

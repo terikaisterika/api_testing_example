@@ -31,9 +31,6 @@ function getCount(entity, mySocket) {
   let url = `http://admin:123@127.0.0.1:3000/${entity}`;
   request(url, async (err, res, body) => {
     if (err) {
-      console.log(`У нас случилась ошибка, мы уже чиним. 
-        Текст ошибки: ${err}.
-        Хотя скорее всего Вы просто не запустили проект с Rest API`);
       sendMessageYourself(
         mySocket,
         `У нас случилась ошибка, мы уже чиним.

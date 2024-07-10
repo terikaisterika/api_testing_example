@@ -120,9 +120,10 @@ work_space.on('connection', (socket) => {
           Список приложений и доступов к ним можно будет проверить на вашей личной странице после 12:00.
           Если Вам не хватает какой-то информации, задайте вопрос.
           Мы разошлем его всем в комнате обущающихся.
-          Выйти из из комнаты instructions можно отправив слово complete.
+          Выйти из комнаты introduction можно отправив слово complete.
           Если нужно отправить сообщение за пределы комнаты, отправьте сообщение с типом события question. 
-          Его получат все, кто прослушивает это событие и может ответить на вопросы новичков.`;
+          Его получат все, кто прослушивает это событие и может ответить на вопросы новичков.
+          count - команда проверки  сколько человек в комнате обучающихся`;
         } else {
           answer = `Чтобы воспользоваться командой, присоединитесь к комнате обучающихся через команду introduction`;
         }
@@ -155,7 +156,7 @@ work_space.on('connection', (socket) => {
     }
   });
   socket.on('question', (message) => {
-    if (message) work_space.broadcast.emit('question', message);
+    if (message) work_space.emit('question', message);
   });
   socket.on('disconnect', () => {
     clientsWorkSpace.splice(clientsWorkSpace.indexOf(socket.id), 1);
