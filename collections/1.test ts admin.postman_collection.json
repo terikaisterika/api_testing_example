@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "2fbf31f4-bd59-46bf-ba3f-5285a958d70c",
+		"name": "1.test ts admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7983202"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus(201)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Тестовый title 2\",\r\n    \"lastName\": \"Тестовый description 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "получить всех users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus()"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:7000"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "elisa",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить user по id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus()"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновить user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus(200)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"firstName\": \"secondValue name 3\",\r\n    \"lastName\": \"secondValue lastName 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "удалить user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus(204)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "create task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus(201)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Terika-Test",
+								"value": "terika",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Тестовый title 2\",\r\n    \"description\": \"Тестовый description 2\",\r\n    \"completed\": true,\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "получить все таски",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus()"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:7000"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновить задачу",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus()"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Тестовый update title\",\r\n    \"description\": \"Тестовый update description\",\r\n    \"completed\": true,\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить task по id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus()"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "удалить задачу",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"utilsPostResponse.checkStatus(204)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Общий запрос",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{login}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"utilsPostResponse = {\r",
+					"    checkStatus: (expectedStatus=200, addMessage='')=>{\r",
+					"        pm.test(`Сверка статуса${addMessage}`, ()=>{\r",
+					"            actualStatus = pm.response.code;\r",
+					"            pm.expect(actualStatus).to.be.eq(expectedStatus, `Фактический статус: ${actualStatus}, ожидаемый статус: ${expectedStatus}`)\r",
+					"            \r",
+					"        }\r",
+					"\r",
+					"        )\r",
+					"    },\r",
+					"    hasHeader: (headerName, headerValue)=>{\r",
+					"        pm.test(`Проверка наличия заголовка и его значения`, ()=>{\r",
+					"            pm.expect(pm.response.headers.get(headerName), `В ответе есть заголовок ${headerName} со значением ${headerValue}`).to.eql(headerValue)\r",
+					"        })\r",
+					"    },\r",
+					"    hasPropertyInJson: (path, expectedValue)=>{\r",
+					"        pm.test(`Проверка наличия свойства и значения`, ()=>{\r",
+					"            let currentValue = utilstHandlers.getProperty(path);\r",
+					"            pm.expect(currentValue, `Проверка: свойство: ${path} равно ${expectedValue}`).to.be.eq(expectedValue);\r",
+					"            \r",
+					"        })\r",
+					"    },\r",
+					"    checkAvailabilityInListJson(id ){\r",
+					"        pm.test(`В списке есть элемент c id ${id}`, ()=>{\r",
+					"            let response = pm.response.json();\r",
+					"            let result = response.filter((el)=>el.id == id);\r",
+					"            if (result.length > 1) throw new Error(`Почему у нас 2 элемента с одинаковым id? Id ${id}. Список элементов с данным id ${result.forEach(el=>console.log(el))}`);\r",
+					"        pm.expect(result.length == 1, `В списке имеется элемент с id ${id}`).to.be.true\r",
+					"        })\r",
+					"    }\r",
+					"}\r",
+					"utilstHandlers = {\r",
+					"    disassemblePath: function(object, path){\r",
+					"        let result;\r",
+					"        try {\r",
+					"        const regExpProperty = /^\\./;\r",
+					"        const regExpForArray = /^\\[/;\r",
+					"        if (regExpProperty.test(path)) {\r",
+					"            result = object[path.match(/[a-zA-Z0-9]+/)[0]];\r",
+					"        } else if (regExpForArray.test(path)) {\r",
+					"            result = object[path.match(/[0-9]/)[0]];\r",
+					"        } else {\r",
+					"            throw new Error(`Передан странный элемент в пути поиска: ${path}`);\r",
+					"        }\r",
+					"        } catch (error) {\r",
+					"        throw new Error(`Какие-то проблемы: ${error}`);\r",
+					"        }\r",
+					"        return result;\r",
+					"    },\r",
+					"    getProperty: function(path){\r",
+					"        let jsonEntity = pm.response.json();\r",
+					"        pathArray = path.match(/\\.([a-zA-Z0-9]+)|\\[[0-9]{1,2}\\]/g) || [];\r",
+					"        let result;\r",
+					"        if (pathArray.length == 0) return;\r",
+					"\r",
+					"        pathArray.forEach((el, ind) => {\r",
+					"            if (ind == 0) {\r",
+					"            result = this.disassemblePath(jsonEntity, el);\r",
+					"            } else {\r",
+					"            result = this.disassemblePath(result, el);\r",
+					"            }\r",
+					"        });\r",
+					"        return result;\r",
+					"    }\r",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:3000",
+			"type": "string"
+		},
+		{
+			"key": "login",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "123",
+			"type": "string"
+		}
+	]
+}
