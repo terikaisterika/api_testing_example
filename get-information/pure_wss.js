@@ -46,10 +46,29 @@ function getCount(entity, mySocket) {
     }
   });
 }
+function checkToken(url, expectedToken = '123') {
+  let result = false;
+  let parameters = new Map();
+  url
+    .replace('/?', '')
+    .split('&')
+    .forEach((element) => {
+      const [parameter, value] = element.split('=');
+      parameters.set(parameter, value);
+    });
+  if (parameters.has('token')) {
+    result = parameters.get('token') == expectedToken;
+  }
+  return result;
+}
 // Основа взаимодействия сервера с клиентом.
-webSocketServer.on('connection', (ws) => {
+webSocketServer.on('connection', (ws, req) => {
+  if (!checkToken(req.url)) {
+    ws.close(1000, 'Токен какой-то не такой');
+    return;
+  }
   let answer = '';
-  const id = Math.random();
+  const id = Number(Math.random().toString().replace('0.', ''));
   clients[id] = ws;
   clients[id].send(
     `Соединение установлено. Для получения инструкции отправьте слово help`
